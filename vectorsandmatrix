@@ -1,0 +1,80 @@
+ვექტორის სიგრძე
+a = np.array([3, 4])
+np.linalg.norm(a)
+
+შეკრება
+a = np.array([1, 2])
+b = np.array([4, 5])
+a + b
+
+გამოკლება
+a - b
+
+სკალარზე ნამრავლი
+scalar = 5
+scalar * a
+
+Dot product (კუთხე ვექტორებს შორის, რომლითაც უნდა მოვატრიალოთ ეს 2 ვეტორი, რათა ერთმანეთს
+დამეთხვეს)
+dot_product = np.dot(a, b)
+
+Cross product
+cross_product = np.cross(a, b)
+
+2 ვექტორს შორის მანძილი
+euclidean_distance = np.linalg.norm(a - b)
+
+
+ვექოტრების ნორმები
+
+
+ნულოვანი რიგის ნორმა: არანულოვან ელემენტთა რაოდენობა ვექტორში
+a = np.array([1, -2, 3, 0, -9, 2, 0])
+np.linalg.norn(a, 0) # 5
+
+პირველი ნორმა: ელემენტების აბსოლიტური მნიშვნელობების ჯამი
+a = np.array([-1, -2, 3])
+np.linang.norm(a, 1)
+
+მეორე ნორმა: ვექტორის სიგრძე
+a = np.array([1, 2, 3])
+np.linalg.norm(a, 2)
+
+უსასრულო ნორმა: ელემენტების აბსოლიტური მნიშვნელობებიდან მაქსიმალური
+a = np.array([1, 2, -3])
+np.lingalg.norm(a, np.inf) # 3
+
+
+მატრიცები
+
+განზომილების ნახვა:
+
+a_vector_column = np.array([[1], [2], [3]])
+a_vector_column.shape
+
+a_vector_row = np.array([[1, 2, 3]])
+a_vector_row.shape
+
+np.diag([1, 2, 3]) # შექმნის დიაგონალს 1, 2 და 3-ით, სადაც ყველა დანარჩენი ელემენტი ნულია
+np.eye(3, dtype=int) # შექმნის ერთეულოვან მატრიცას, სადაც დიაგონალზე ერთებია, დანარჩენები ნული
+np.zeros((3, 2), dtype=int) # შექმნის ნულოვან მატრიცას, ყველაფერი ნული იქნება
+
+მატრიცების ტოლობა:
+a_matrix = np.array([[1, 2], [3, 4]])
+b_matrix = np.array([[1, 2], [3, 4]])
+
+a_matrix == b_matrix # პასუხი იქნება ტოლობა თითოეული ელემენტისთვის [[True, True], [True, True]]
+
+np.array_equal(a_matrix, b_matrix) # პასუხი იქნება True ან False
+
+a_matrix + b_matrix # მატრიცების შეკება
+a_matrix - b_matrix
+a_matrix * scalar # სკალარზე ნამრავლი
+a_matrix @ b_matrix # მატრიცების ნამრავლი
+a_matrix.T # transpose matrix
+np.linalg.det(a_matrix) # დეტერმინანტი
+np.trace(a_matrix) # კვალი
+np.linalg.matrix_rank(a_matrix) # მატრიცის რანგი
+np.linalg.inv(a_matrix)
+np.linglag.eig(a_matrix) # საკუთრივი მნიშვნელობები და საკუთრივი ვექტორები
+
